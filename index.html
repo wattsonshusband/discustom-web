@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <link rel="stylesheet" href="./css/styles.css">
+ <title>Discustom</title>
+</head>
+<body class="dark">
+ <h1 class="typewriter">Discustom</h1>
+
+ <div class="resized">
+  <p>
+  Discustom is an open-source project on GitHub. It started as a CLI tool using static files and task scheduler, but has since evolved. You can find more details and source code on its GitHub repository.
+  </p>
+
+  <h3>
+   Installation
+  </h3>
+
+  <p>
+   <a href="https://github.com/wattsonshusband/discustom">Github Repo</a>
+  </p>
+  <p>Either run it from the app.py or you can build it.</p>
+  <code>
+   python app.py/build.py
+  </code>
+
+  <p>or you can download pre-built binaries from the Github Repo, and run it.</p>
+
+  <p>if you're building it or running it from app.py then you will have to install the required modules <br>(the list is shown on the repo page)</p>
+
+  <h3>
+   Demo
+  </h3>
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXRtMWVmZG1hY2d6MTRodWQyNjhnZjZlaXJuNGZiNXl1cjhhdTdzNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RJvG5g6u039v2X8ix6/giphy.gif" alt="Discustom Demo">
+ </div>
+
+ <script>
+  var text = $('.typewriter').text();
+  var length = text.length;
+  var timeOut;
+  var character = 0;
+
+  (function typeWriter() {
+   timeOut = setTimeout(function() {
+    character++;
+    var type = text.substring(0, character);
+    $('.typewriter').text(type);
+    typeWriter();
+    if (character == length) {
+     clearTimeout(timeOut);
+    }
+   }, 125);
+  }());
+ </script>
+</body>
+</html>
